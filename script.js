@@ -7,16 +7,17 @@ document.getElementById("btnResponder").addEventListener("click", function () {
   let animacion = document.getElementById("animacion");
 
   if (amor > 70) {
-    // Corazones cayendo
-    for (let i = 0; i < 20; i++) {
-      let heart = document.createElement("div");
-      heart.classList.add("corazon");
-      heart.textContent = "❤️";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (Math.random() * 2 + 2) + "s";
-      animacion.appendChild(heart);
-      setTimeout(() => heart.remove(), 3000);
-    }
+  // Corazones cayendo más lentos
+  for (let i = 0; i < 20; i++) {
+    let heart = document.createElement("div");
+    heart.classList.add("corazon");
+    heart.textContent = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 2 + 3) + "s"; // 3-5 segundos
+    animacion.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }
+
 
     // Mostrar carta cerrada con delay
     setTimeout(() => {
